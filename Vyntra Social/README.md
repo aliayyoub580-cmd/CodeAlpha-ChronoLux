@@ -103,8 +103,9 @@ For questions or help, open an issue in the repository or contact the maintainer
 ## Demo
 
 
+https://github.com/user-attachments/assets/753fbcd5-c608-4756-bcd7-1f83907e4946
 
-[Watch Demo Video](https://github.com/aliayyoub580-cmd/CodeAlpha-ChronoLux/raw/main/Vyntra%20Social/public/assets/Vyntra%20social.mp4)
+
 
 ### Direct Download
 <a href="https://raw.githubusercontent.com/aliayyoub580-cmd/CodeAlpha-ChronoLux/main/Vyntra%20Social/public/assets/Vyntra%20social.mp4" download>
