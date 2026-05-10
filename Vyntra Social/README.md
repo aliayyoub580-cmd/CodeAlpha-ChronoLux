@@ -102,13 +102,9 @@ For questions or help, open an issue in the repository or contact the maintainer
 
 ## Demo
 
-Embedded demo video (stored in the repository):
-
 <video controls width="720">
-  <source src="public/Vyntra%20social.mp4" type="video/mp4">
+  <source src="/Vyntra%20social.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
-
-Direct download: [public/Vyntra social.mp4](public/Vyntra%20social.mp4)
 
 Live site: https://vyntra-socila.vercel.app
