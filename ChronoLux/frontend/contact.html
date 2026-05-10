@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoLux | Contact Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand__mark">CL</span><span>ChronoLux</span></a>
+      <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="nav__menu" data-nav-menu>
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="shop.html">Shop</a>
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link is-active" href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--secondary" data-auth-link href="login.html">Login</a>
+        <a class="btn btn--primary" data-cart-button href="cart.html">Cart <span class="badge" data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Contact Hero Section -->
+    <section class="contact-hero page-shell">
+      <div class="container">
+        <p class="eyebrow">Get in Touch</p>
+        <h1 class="section-title">We're Here to Help</h1>
+        <p class="section-copy">Have a question about a product, an order, or our collection? Our support team is here to help you with a smooth and professional shopping experience.</p>
+      </div>
+    </section>
+
+    <!-- Contact Information Cards -->
+    <section class="contact-info-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">✉</div>
+            <h3>Email Support</h3>
+            <p>For product questions, order support, and general inquiries.</p>
+            <a href="mailto:support@chronolux.com" class="contact-link">support@chronolux.com</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">☎</div>
+            <h3>Phone Support</h3>
+            <p>Speak directly with our customer support team during business hours.</p>
+            <a href="tel:+15551234567" class="contact-link">+1 (555) 123-4567</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">◆</div>
+            <h3>Business Hours</h3>
+            <p>Monday – Friday: 9:00 AM – 6:00 PM<br>Saturday: 10:00 AM – 4:00 PM<br>Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+      <div class="container">
+        <div class="form-wrapper">
+          <div class="form-header">
+            <p class="eyebrow">Send Us a Message</p>
+            <h2>Get in Touch Directly</h2>
+            <p>Fill out the form below and our team will respond as soon as possible.</p>
+          </div>
+          
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                placeholder="Enter your full name"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Enter your email address"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                placeholder="Enter your phone number"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input 
+                type="text" 
+                id="subject" 
+                name="subject" 
+                placeholder="How can we help?"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                placeholder="Write your message here..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary form-submit-btn">Send Message</button>
+            <div id="formMessage" class="form-message" style="display: none;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <p class="eyebrow">Frequently Asked Questions</p>
+        <h2>Common Questions</h2>
+        
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>How long does delivery take?</h4>
+            <p>Delivery times depend on your location, but most orders are processed promptly and shipped with care. You'll receive tracking information once your order ships.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>Can I ask questions before buying?</h4>
+            <p>Yes, absolutely. Our team can help you understand product details, style options, and order information before you purchase. Feel free to reach out anytime.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>Do you provide order support?</h4>
+            <p>Yes. If you have questions about an existing order, contact us with your order details and we will assist you promptly with any concerns or updates.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>Is checkout secure?</h4>
+            <p>Yes. Your checkout experience is built with secure payment handling and customer privacy in mind. All transactions are encrypted and protected.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>What's your return policy?</h4>
+            <p>We want you to be completely satisfied with your purchase. If you have concerns about your watch, contact our support team to discuss options.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>Do you offer warranty coverage?</h4>
+            <p>Many of our watches include manufacturer warranty coverage. Details are provided with each product. Contact us for specific warranty information.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location/Service Area Section -->
+    <section class="service-area-section">
+      <div class="container">
+        <div class="service-area-content">
+          <p class="eyebrow">Our Reach</p>
+          <h2>We Serve You Online</h2>
+          <p>ChronoLux operates as an online-first watch store, serving customers worldwide with a smooth digital shopping experience and responsive support. Whether you're in New York, Los Angeles, or anywhere in between, we're here to help you find the perfect timepiece.</p>
+          <p style="margin-top: 1.5rem; font-weight: 600; color: #d4a72c;">For urgent inquiries, please call during business hours or email us directly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional CTA Section -->
+    <section class="additional-cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h3>Still looking for the perfect watch?</h3>
+          <p>Browse our full collection of luxury timepieces.</p>
+          <a href="shop.html" class="btn btn--primary">Explore Shop</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <p style="color: #d4a72c; font-weight: 700; margin-bottom: 0.5rem;">ChronoLux</p>
+          <p>Timeless timepieces, modern elegance.</p>
+        </div>
+        <div class="footer-section">
+          <p style="color: #cbd5e1; font-weight: 600; margin-bottom: 0.75rem;">Quick Links</p>
+          <a href="shop.html">Shop</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+          <p style="color: #cbd5e1; font-weight: 600; margin-bottom: 0.75rem;">Support</p>
+          <p>support@chronolux.com</p>
+          <p>+1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ChronoLux. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      
+      try {
+        const response = await fetch('http://localhost:5000/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        const messageDiv = document.getElementById('formMessage');
+        
+        if (response.ok) {
+          messageDiv.textContent = 'Thank you for contacting us. Your message has been received, and our team will respond as soon as possible.';
+          messageDiv.className = 'form-message form-message--success';
+          e.target.reset();
+        } else {
+          messageDiv.textContent = 'Something went wrong. Please check your information and try again.';
+          messageDiv.className = 'form-message form-message--error';
+        }
+        
+        messageDiv.style.display = 'block';
+        setTimeout(() => {
+          messageDiv.style.display = 'none';
+        }, 5000);
+      } catch (error) {
+        console.error('Form submission error:', error);
+        const messageDiv = document.getElementById('formMessage');
+        messageDiv.textContent = 'Something went wrong. Please try again later.';
+        messageDiv.className = 'form-message form-message--error';
+        messageDiv.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

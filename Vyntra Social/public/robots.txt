@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /messages
+Disallow: /notifications
+
+Sitemap: https://vyntra-socila.vercel.app/sitemap.xml

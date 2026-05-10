@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoLux | Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand__mark">CL</span><span>ChronoLux</span></a>
+      <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="nav__menu" data-nav-menu>
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="shop.html">Shop</a>
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--secondary" data-auth-link href="login.html">Login</a>
+        <a class="btn btn--primary" data-cart-button href="cart.html">Cart <span class="badge" data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <!-- Dashboard Hero -->
+    <section class="dashboard-hero">
+      <div class="container">
+        <div class="dashboard-hero__content">
+          <p class="eyebrow">Account</p>
+          <h1 class="dashboard-hero__title">Your ChronoLux Dashboard</h1>
+          <p class="dashboard-hero__subtitle">Manage your profile, track orders, and explore premium timepieces</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard Grid -->
+    <section class="dashboard-section">
+      <div class="container">
+        <div class="dashboard-grid">
+          <!-- Profile Card -->
+          <div class="dashboard-card profile-card">
+            <div class="card-header">
+              <p class="card-label">Profile Information</p>
+              <div class="card-icon">◆</div>
+            </div>
+            
+            <div class="profile-info" data-user-profile>
+              <div class="profile-skeleton">
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line short"></div>
+              </div>
+            </div>
+
+            <div class="profile-actions">
+              <a class="btn btn--secondary" href="index.html">Explore Collection</a>
+              <button class="btn btn--primary" data-logout>Logout</button>
+            </div>
+          </div>
+
+          <!-- Quick Stats Card -->
+          <div class="dashboard-card stats-card">
+            <div class="card-header">
+              <p class="card-label">Account Summary</p>
+              <div class="card-icon">★</div>
+            </div>
+            
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-value" data-total-orders>0</div>
+                <div class="stat-label">Total Orders</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value" data-total-spent>Rs 0</div>
+                <div class="stat-label">Total Spent</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order History Section -->
+    <section class="dashboard-section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Recent Activity</p>
+          <h2 class="section-title">Order History</h2>
+          <p class="section-subtitle">View and manage your premium watch purchases</p>
+        </div>
+
+        <div class="orders-container">
+          <div class="orders-list" data-order-history>
+            <!-- Orders will be populated here -->
+            <div class="empty-orders">
+              <p class="empty-orders__icon">📦</p>
+              <p class="empty-orders__title">No Orders Yet</p>
+              <p class="empty-orders__text">Start your collection with a premium ChronoLux timepiece</p>
+              <a href="shop.html" class="btn btn--primary">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <p style="color: #d4a72c; font-weight: 700; margin-bottom: 0.5rem;">ChronoLux</p>
+          <p>Timeless timepieces, modern elegance.</p>
+        </div>
+        <div class="footer-section">
+          <p style="color: #cbd5e1; font-weight: 600; margin-bottom: 0.75rem;">Quick Links</p>
+          <a href="shop.html">Shop</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+          <p style="color: #cbd5e1; font-weight: 600; margin-bottom: 0.75rem;">Support</p>
+          <p>support@chronolux.com</p>
+          <p>+1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ChronoLux. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoLux | Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand__mark">CL</span><span>ChronoLux</span></a>
+      <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="nav__menu" data-nav-menu>
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link is-active" href="shop.html">Shop</a>
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--secondary" data-auth-link href="login.html">Login</a>
+        <a class="btn btn--primary" data-cart-button href="cart.html">Cart <span class="badge" data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <section class="shop-hero page-shell">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <p class="eyebrow">Shop Collection</p>
+            <h1 class="section-title">Premium watches for every moment</h1>
+            <p class="section-copy">Browse our full ChronoLux catalog, filter by category, sort by price or rating, and discover watches styled for luxury, performance, and everyday elegance.</p>
+          </div>
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero__orb"></div>
+            <div class="hero__orb--2"></div>
+            <div class="hero__watch">
+              <img src="/public/men%20watches/hero-luxury-men.jpg" alt="ChronoLux hero watch preview in the shop section">
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="filters-panel page-shell">
+        <div class="filters">
+          <input type="search" placeholder="Search watches" data-search>
+          <select data-category>
+            <option value="all">All Categories</option>
+            <option value="Luxury">Luxury</option>
+            <option value="Classic">Classic</option>
+            <option value="Sports">Sports</option>
+            <option value="Women">Women</option>
+          </select>
+          <select data-sort>
+            <option value="newest">Newest</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+          <input type="number" min="0" placeholder="Min price" data-min-price>
+          <input type="number" min="0" placeholder="Max price" data-max-price>
+        </div>
+      </div>
+      <div class="product-grid product-grid--shop" data-shop-products></div>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

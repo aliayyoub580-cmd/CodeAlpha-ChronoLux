@@ -1,0 +1,6 @@
+{
+  "name": "vyntra-social-server",
+  "private": true,
+  "type": "module",
+  "main": "server.js"
+}

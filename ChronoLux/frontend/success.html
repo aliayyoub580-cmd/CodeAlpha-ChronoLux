@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoLux | Order Success</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="section">
+    <div class="container">
+      <div class="auth-card" style="text-align:center;max-width:720px;margin:0 auto;">
+        <p class="eyebrow">Order Confirmed</p>
+        <h1 class="section-title">Your order has been placed successfully.</h1>
+        <p class="muted">Order ID: <strong id="orderId">CLX-0000</strong></p>
+        <p class="muted">Estimated delivery: 3-5 business days</p>
+        <a class="btn btn--primary" href="shop.html">Continue Shopping</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    const lastOrder = JSON.parse(localStorage.getItem('chronolux_last_order') || '{}');
+    if (lastOrder.id) {
+      document.getElementById('orderId').textContent = lastOrder.id;
+    }
+  </script>
+</body>
+</html>

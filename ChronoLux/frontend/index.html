@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoLux | Discover Timeless Luxury</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand__mark">CL</span><span>ChronoLux</span></a>
+      <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="nav__menu" data-nav-menu>
+        <a class="nav__link is-active" href="index.html">Home</a>
+        <a class="nav__link" href="shop.html">Shop</a>
+        <a class="nav__link" href="about.html">About</a>
+          <a class="nav__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--secondary" data-auth-link href="login.html">Login</a>
+        <a class="btn btn--primary" data-cart-button href="cart.html">Cart <span class="badge" data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Premium Watch Boutique</p>
+          <h1 class="hero__title">Discover Timeless Luxury</h1>
+          <p class="hero__lead">Premium watches crafted for elegance, performance, and modern style. Explore a collection designed to feel refined, confident, and unforgettable.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="shop.html">Shop Collection</a>
+            <a class="btn btn--secondary" href="#featured">Explore Collection</a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__orb"></div>
+          <div class="hero__orb--2"></div>
+          <div class="hero__watch">
+            <img src="/public/men%20watches/hero-luxury-men.jpg" alt="Luxury ChronoLux watch featured in the hero section">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="featured">
+      <div class="container">
+        <p class="eyebrow">Featured Categories</p>
+        <h2 class="section-title">Curated for every style</h2>
+        <div class="category-grid">
+          <article class="category-card reveal" data-reveal><div class="category-card__icon">L</div><h3>Luxury Watches</h3><p class="muted">Statement timepieces crafted to elevate formal and evening looks.</p></article>
+          <article class="category-card reveal" data-reveal><div class="category-card__icon">S</div><h3>Sports Watches</h3><p class="muted">Performance-ready designs with rugged style and dependable details.</p></article>
+          <article class="category-card reveal" data-reveal><div class="category-card__icon">M</div><h3>Smart Watches</h3><p class="muted">Modern functionality blended with a premium luxury aesthetic.</p></article>
+          <article class="category-card reveal" data-reveal><div class="category-card__icon">C</div><h3>Classic Watches</h3><p class="muted">Minimal, timeless silhouettes for professionals and collectors.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Featured Products</p>
+        <h2 class="section-title">Best-selling ChronoLux pieces</h2>
+        <div class="product-grid" data-featured-products></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Why Choose Us</p>
+        <h2 class="section-title">A premium experience, end to end</h2>
+        <div class="benefit-grid">
+          <article class="benefit-card reveal" data-reveal><div class="benefit-card__icon">01</div><h3>Premium Quality</h3><p class="muted">Hand-picked designs with refined materials and polished finishing.</p></article>
+          <article class="benefit-card reveal" data-reveal><div class="benefit-card__icon">02</div><h3>Secure Checkout</h3><p class="muted">Protected ordering flow with a clean and trustworthy checkout experience.</p></article>
+          <article class="benefit-card reveal" data-reveal><div class="benefit-card__icon">03</div><h3>Fast Delivery</h3><p class="muted">Reliable shipping so your new watch arrives with confidence and speed.</p></article>
+          <article class="benefit-card reveal" data-reveal><div class="benefit-card__icon">04</div><h3>Authentic Products</h3><p class="muted">Only verified, premium watches with clear product details and support.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="promo-banner reveal" data-reveal>
+          <div>
+            <p class="eyebrow">Limited Offer</p>
+            <h2>Up to 30% Off Premium Collection</h2>
+            <p class="muted">Discover exclusive designs made for modern professionals and watch lovers.</p>
+          </div>
+          <a class="btn btn--primary" href="shop.html">Shop Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html"><span class="brand__mark">CL</span><span>ChronoLux</span></a>
+        <p>ChronoLux is your destination for premium watches, timeless design, and reliable quality.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Account</h4>
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="socials">
+          <a href="#">IG</a><a href="#">FB</a><a href="#">X</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>
