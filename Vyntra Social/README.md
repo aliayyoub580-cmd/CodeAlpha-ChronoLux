@@ -102,9 +102,14 @@ For questions or help, open an issue in the repository or contact the maintainer
 
 ## Demo
 
+## Demo Video
+
 <video controls width="720">
-  <source src="/Vyntra%20social.mp4" type="video/mp4" />
+  <source src="https://raw.githubusercontent.com/aliayyoub580-cmd/CodeAlpha-ChronoLux/main/Vyntra%20Social/public/assets/Vyntra%20social.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-Live site: https://vyntra-socila.vercel.app
+### Direct Download
+<a href="https://raw.githubusercontent.com/aliayyoub580-cmd/CodeAlpha-ChronoLux/main/Vyntra%20Social/public/assets/Vyntra%20social.mp4" download>
+  Download Video
+</a>
