@@ -4,14 +4,7 @@ ChronoLux is a polished e-commerce demo showcasing a premium watch store experie
 
 **Live demo (local)**: start the backend and open `http://localhost:5000` in your browser.
 
-**Video preview**
 
-<video controls width="840" poster="public/men%20watches/hero-luxury-men.jpg">
-  <source src="public/ChronoLux.mp4" type="video/mp4">
-  Your browser does not support the video tag. You can download the demo: [Download demo video](public/ChronoLux.mp4)
-</video>
-
----
 
 **Quick Overview**
 - **Purpose**: Showcase a small e-commerce storefront with product browsing, filtering, and cart features.
@@ -118,8 +111,13 @@ npm run dev
 
 3. Open `frontend/index.html` in a browser or run it with Live Server.
 
-## Notes
+## Video preview
 
-- Guest cart data is stored in `localStorage` under `chronolux_cart`.
-- Auth token is stored in `localStorage` under `chronolux_token`.
-- The backend seeds sample products from the bundled watch image paths when the database is empty.
+
+
+https://github.com/user-attachments/assets/269f2174-f2f6-49cd-aee9-f2134c6d3672
+
+
+
+
+
