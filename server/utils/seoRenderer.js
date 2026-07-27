@@ -508,6 +508,7 @@ export async function renderSitemapXml() {
   const urls = [
     { loc: absoluteUrl('/'), changefreq: 'weekly', priority: '1.0', lastmod: new Date().toISOString() },
     { loc: absoluteUrl('/explore'), changefreq: 'daily', priority: '0.8', lastmod: new Date().toISOString() },
+    { loc: absoluteUrl('/news'), changefreq: 'daily', priority: '0.8', lastmod: new Date().toISOString() },
     { loc: absoluteUrl('/about'), changefreq: 'monthly', priority: '0.7', lastmod: new Date().toISOString() },
     { loc: absoluteUrl('/privacy-policy'), changefreq: 'yearly', priority: '0.4', lastmod: new Date().toISOString() },
     { loc: absoluteUrl('/terms-and-conditions'), changefreq: 'yearly', priority: '0.4', lastmod: new Date().toISOString() }

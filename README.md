@@ -15,6 +15,11 @@ Vyntra Social is a lightweight social media web application built with Node.js a
 - Repost and share posts
 - Image upload and storage (Supabase Storage)
 - Server-side rendering for SEO (helpers in `utils/seoRenderer.js`)
+- Daily News page with 10 keyless Hacker News stories stored in Supabase
+
+## Daily news automation
+
+Run `supabase/schema.sql` in the Supabase SQL editor after deploying this change. Set a long random `CRON_SECRET` in Vercel's environment variables. The Vercel cron job calls `/api/news/refresh` every day at 05:00 UTC, fetches ten stories from the keyless Hacker News Algolia API, and atomically replaces the previous day's rows.
 
 ## Project Structure (key files)
 
