@@ -45,12 +45,22 @@ function isAuthorizedRefresh(req) {
 
 export const getNews = asyncHandler(async (req, res) => {
   requireSupabase();
-  const { data, error } = await supabaseAdmin
+  let { data, error } = await supabaseAdmin
     .from('news_articles')
     .select('id, title, summary, source_name, source_url, author, published_at, fetched_at')
     .order('published_at', { ascending: false })
     .limit(10);
   if (error) throw httpError(500, "Could not load today's news.", error.message);
+
+  // Populate the first set immediately instead of leaving a new page empty
+  // until the next scheduled Vercel Cron run.
+  if (!data?.length) {
+    const articles = await fetchLatestNews();
+    const { error: refreshError } = await supabaseAdmin.rpc('replace_daily_news', { p_articles: articles });
+    if (refreshError) throw httpError(500, 'Could not save the first daily news set.', refreshError.message);
+    data = articles;
+  }
+
   res.json({ articles: data || [] });
 });
 
