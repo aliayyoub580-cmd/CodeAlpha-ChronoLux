@@ -62,6 +62,41 @@ create table if not exists public.reposts (
   constraint reposts_post_user_unique unique (post_id, user_id)
 );
 
+create table if not exists public.news_articles (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  summary text,
+  source_name text not null default 'Hacker News',
+  source_url text not null unique,
+  author text,
+  published_at timestamptz,
+  fetched_at timestamptz not null default now()
+);
+
+create index if not exists news_articles_fetched_idx on public.news_articles(fetched_at desc);
+
+-- Replaces the daily set in one transaction, so a failed fetch cannot remove existing news.
+create or replace function public.replace_daily_news(p_articles jsonb)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if jsonb_array_length(p_articles) <> 10 then
+    raise exception 'Exactly 10 news articles are required';
+  end if;
+
+  delete from public.news_articles;
+
+  insert into public.news_articles (title, summary, source_name, source_url, author, published_at)
+  select title, summary, source_name, source_url, author, published_at
+  from jsonb_to_recordset(p_articles) as article(
+    title text, summary text, source_name text, source_url text, author text, published_at timestamptz
+  );
+end;
+$$;
+
 create index if not exists posts_user_created_idx on public.posts(user_id, created_at desc);
 create index if not exists posts_created_idx on public.posts(created_at desc);
 create index if not exists comments_post_created_idx on public.comments(post_id, created_at asc);
@@ -136,6 +171,7 @@ alter table public.likes enable row level security;
 alter table public.followers enable row level security;
 alter table public.shares enable row level security;
 alter table public.reposts enable row level security;
+alter table public.news_articles enable row level security;
 
 drop policy if exists "Profiles are readable by everyone" on public.profiles;
 create policy "Profiles are readable by everyone"
@@ -243,3 +279,8 @@ drop policy if exists "Users can delete own reposts" on public.reposts;
 create policy "Users can delete own reposts"
 on public.reposts for delete
 using (auth.uid() = user_id);
+
+drop policy if exists "News is readable by everyone" on public.news_articles;
+create policy "News is readable by everyone"
+on public.news_articles for select
+using (true);

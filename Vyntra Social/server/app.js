@@ -11,6 +11,7 @@ import authRoutes from './routes/authRoutes.js';
 import commentRoutes from './routes/commentRoutes.js';
 import followRoutes from './routes/followRoutes.js';
 import likeRoutes from './routes/likeRoutes.js';
+import newsRoutes from './routes/newsRoutes.js';
 import postRoutes from './routes/postRoutes.js';
 import profileRoutes from './routes/profileRoutes.js';
 import repostRoutes from './routes/repostRoutes.js';
@@ -68,6 +69,7 @@ app.use('/api/posts', likeRoutes);
 app.use('/api/posts', shareRoutes);
 app.use('/api/posts', repostRoutes);
 app.use('/api/users', followRoutes);
+app.use('/api/news', newsRoutes);
 
 app.get('/robots.txt', (req, res) => {
   res.type('text/plain').send(renderRobotsTxt());
@@ -94,6 +96,7 @@ const pageFiles = {
   '/home': 'index.html',
   '/about': 'about.html',
   '/feed': 'feed.html',
+  '/news': 'news.html',
   '/privacy-policy': 'privacy-policy.html',
   '/login': 'login.html',
   '/register': 'register.html',

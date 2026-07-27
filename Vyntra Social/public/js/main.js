@@ -2,6 +2,7 @@
   const routes = {
     home: '/',
     explore: '/explore',
+    news: '/news',
     profile: '/profile',
     create: '/create',
     settings: '/settings',
@@ -10,7 +11,8 @@
 
   const publicNavItems = [
     { key: 'home', label: 'Home', href: routes.home, icon: 'home' },
-    { key: 'explore', label: 'Explore', href: routes.explore, icon: 'compass' }
+    { key: 'explore', label: 'Explore', href: routes.explore, icon: 'compass' },
+    { key: 'news', label: 'News', href: routes.news, icon: 'newspaper' }
   ];
 
   const appNavItems = [
@@ -150,6 +152,7 @@
     const items = [
       { key: 'home', label: 'Home', href: routes.home, icon: 'home' },
       { key: 'explore', label: 'Explore', href: routes.explore, icon: 'compass' },
+      { key: 'news', label: 'News', href: routes.news, icon: 'newspaper' },
       { key: 'create', label: 'Create', href: routes.create, icon: 'plus-square' },
       { key: 'profile', label: 'Profile', href: profileHref(), icon: 'user-round' }
     ];
