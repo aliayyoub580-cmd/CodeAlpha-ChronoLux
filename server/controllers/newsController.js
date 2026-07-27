@@ -38,6 +38,15 @@ async function fetchLatestNews() {
   return articles;
 }
 
+async function saveDailyNews(articles) {
+  // Supabase requires a filter on deletes, even when the service-role client is used.
+  const { error: deleteError } = await supabaseAdmin.from('news_articles').delete().not('id', 'is', null);
+  if (deleteError) throw httpError(500, 'Could not clear the previous daily news.', deleteError.message);
+
+  const { error: insertError } = await supabaseAdmin.from('news_articles').insert(articles);
+  if (insertError) throw httpError(500, 'Could not save the daily news.', insertError.message);
+}
+
 function isAuthorizedRefresh(req) {
   const secret = process.env.CRON_SECRET;
   return Boolean(secret) && req.get('authorization') === `Bearer ${secret}`;
@@ -56,8 +65,7 @@ export const getNews = asyncHandler(async (req, res) => {
   // until the next scheduled Vercel Cron run.
   if (!data?.length) {
     const articles = await fetchLatestNews();
-    const { error: refreshError } = await supabaseAdmin.rpc('replace_daily_news', { p_articles: articles });
-    if (refreshError) throw httpError(500, 'Could not save the first daily news set.', refreshError.message);
+    await saveDailyNews(articles);
     data = articles;
   }
 
@@ -68,7 +76,6 @@ export const refreshNews = asyncHandler(async (req, res) => {
   if (!isAuthorizedRefresh(req)) throw httpError(401, 'Unauthorized news refresh.');
   requireSupabase();
   const articles = await fetchLatestNews();
-  const { error } = await supabaseAdmin.rpc('replace_daily_news', { p_articles: articles });
-  if (error) throw httpError(500, 'Could not save the daily news.', error.message);
+  await saveDailyNews(articles);
   res.json({ message: 'Daily news refreshed.', count: articles.length });
 });

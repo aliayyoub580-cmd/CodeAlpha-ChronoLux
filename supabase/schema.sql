@@ -87,7 +87,7 @@ begin
     raise exception 'Exactly 10 news articles are required';
   end if;
 
-  delete from public.news_articles;
+  delete from public.news_articles where id is not null;
 
   insert into public.news_articles (title, summary, source_name, source_url, author, published_at)
   select title, summary, source_name, source_url, author, published_at
