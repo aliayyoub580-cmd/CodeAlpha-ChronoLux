@@ -38,19 +38,50 @@ async function fetchLatestNews() {
   return articles;
 }
 
+async function saveDailyNews(articles) {
+  // Try atomic database RPC function first
+  const { error: rpcError } = await supabaseAdmin.rpc('replace_daily_news', { p_articles: articles });
+  if (!rpcError) return;
+
+  // Fallback if RPC migration was not applied or returns an error
+  const { error: deleteError } = await supabaseAdmin.from('news_articles').delete().not('id', 'is', null);
+  if (deleteError) throw httpError(500, 'Could not clear the previous daily news.', deleteError.message);
+
+  const { error: insertError } = await supabaseAdmin.from('news_articles').insert(articles);
+  if (insertError) throw httpError(500, 'Could not save the daily news.', insertError.message);
+}
+
 function isAuthorizedRefresh(req) {
   const secret = process.env.CRON_SECRET;
-  return Boolean(secret) && req.get('authorization') === `Bearer ${secret}`;
+  const isVercelCron = req.headers['x-vercel-cron'] === '1' || req.headers['x-vercel-cron'] === 1;
+  const hasValidBearer = Boolean(secret) && req.get('authorization') === `Bearer ${secret}`;
+  return isVercelCron || hasValidBearer;
 }
 
 export const getNews = asyncHandler(async (req, res) => {
   requireSupabase();
-  const { data, error } = await supabaseAdmin
+  let { data, error } = await supabaseAdmin
     .from('news_articles')
     .select('id, title, summary, source_name, source_url, author, published_at, fetched_at')
     .order('published_at', { ascending: false })
     .limit(10);
   if (error) throw httpError(500, "Could not load today's news.", error.message);
+
+  const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+  const oldestFetchedAt = data?.length ? new Date(data[0].fetched_at || data[0].published_at || 0).getTime() : 0;
+  const isStale = !data?.length || (Date.now() - oldestFetchedAt > ONE_DAY_MS);
+
+  // Auto-fetch fresh news if articles are empty or older than 24 hours
+  if (isStale) {
+    try {
+      const articles = await fetchLatestNews();
+      await saveDailyNews(articles);
+      data = articles;
+    } catch (refreshErr) {
+      console.error('[NEWS] Auto-refresh of stale news failed:', refreshErr.message);
+    }
+  }
+
   res.json({ articles: data || [] });
 });
 
@@ -58,7 +89,6 @@ export const refreshNews = asyncHandler(async (req, res) => {
   if (!isAuthorizedRefresh(req)) throw httpError(401, 'Unauthorized news refresh.');
   requireSupabase();
   const articles = await fetchLatestNews();
-  const { error } = await supabaseAdmin.rpc('replace_daily_news', { p_articles: articles });
-  if (error) throw httpError(500, 'Could not save the daily news.', error.message);
+  await saveDailyNews(articles);
   res.json({ message: 'Daily news refreshed.', count: articles.length });
 });
